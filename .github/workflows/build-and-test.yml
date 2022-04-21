@@ -29,3 +29,5 @@ jobs:
           apiKey: ${{ secrets.HAWK_API_KEY }}
       - name: OWASP ZAP Baseline Scan
         uses: zaproxy/action-baseline@v0.6.1
+        with:
+          target: 'http://localhost:3000'
