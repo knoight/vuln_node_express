@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: "Install npm deps"
-          command: npm install
+          command: npm install --ignore-scripts
   test:
     docker:
       - image: node:lts
