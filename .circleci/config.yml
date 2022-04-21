@@ -26,6 +26,7 @@ jobs:
           name: "Install npm deps"
           command: npm install --ignore-scripts
       - run_server
+      - zap_scan
   test:
     docker:
       - image: node:lts
