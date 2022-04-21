@@ -6,6 +6,11 @@ commands:
           - run:
               name: "Start da server"
               command: npm run start &
+    zap_scan:
+        steps:
+          - run:
+              name: "fire away"
+              command: docker run --user root --network=host -t owasp/zap2docker-stable zap-full-scan.py -t http://localhost:3000 -J report_json.json -w report_md.md -r report_html.html
 
 # Define the jobs we want to run for this project
 jobs:
