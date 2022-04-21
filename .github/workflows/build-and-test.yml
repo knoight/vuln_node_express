@@ -27,3 +27,5 @@ jobs:
         uses: stackhawk/hawkscan-action@v1.3.4
         with:
           apiKey: ${{ secrets.HAWK_API_KEY }}
+      - name: OWASP ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.6.1
