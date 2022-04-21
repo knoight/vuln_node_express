@@ -1,5 +1,12 @@
 version: 2.1
 
+commands:
+    run_server:
+        steps:
+          - run:
+              name: "Start da server"
+              command: npm run start &
+
 # Define the jobs we want to run for this project
 jobs:
   build:
@@ -13,6 +20,7 @@ jobs:
       - run:
           name: "Install npm deps"
           command: npm install --ignore-scripts
+      - run_server
   test:
     docker:
       - image: node:lts
